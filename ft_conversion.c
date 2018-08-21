@@ -31,14 +31,12 @@ static void	ft_undefined()
 	write(1, "undefined", 9);
 }
 
-void    ft_get_conversion(char c, va_list arg)
+void    ft_conversion(char c, va_list arg)
 {
-    char conv;
-	if (check("%sSpdDioOuUxXcC", c))
-    {
-        conv = c;
+	if (check("sSpdDioOuUxXcC", c))
         ft_print(c, arg);
-    }
-	else
+	else if(c == '%')
+        ft_putchar(c);
+    else
 		ft_undefined();
 }

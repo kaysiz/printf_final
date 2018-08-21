@@ -14,5 +14,5 @@
 
 void    ft_putwstr(wchar_t *str)
 {
-    
+    ft_putstr((char *)str);
 }

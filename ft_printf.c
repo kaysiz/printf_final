@@ -25,10 +25,11 @@ int ft_printf( const char *format, ... )
     {
         if(format[j] == '%')
         {
-            ft_conversion(format[j+1], args);
-            i++;
+            j++;
+            ft_conversion(format[j], args);
         }
-        write(1, &format[j], 1);
+        else
+            write(1, &format[j], 1);
         j++;
         i++;
     }

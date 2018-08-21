@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void    ft_putchar_w(wchar_t c)
+void    ft_putwchar(wchar_t c)
 {
     write(1, &c, 1);
 }

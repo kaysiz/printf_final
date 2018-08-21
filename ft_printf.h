@@ -19,11 +19,9 @@
 # include <stdarg.h>
 # include <wchar.h>
 
-void	ft_conversion(char c, va_list va);
-void    ft_print(char c, va_list arg);
 void	ft_putchar(char c);
 void	ft_putwchar(wchar_t c);
-void	ft_putstr(char const *s);
+void	ft_putstr(char *s);
 void	ft_putwstr(wchar_t *str);
 void    ft_print_nbr(va_list arg, char c);
 void	ft_putnbr(int n);
@@ -35,5 +33,7 @@ void	ft_printuloct(unsigned long long int n);
 void	print_hex(int n, char c);
 void	ft_print_hex(va_list arg, char c);
 void	ft_printaddr(unsigned long int n);
+void    ft_print(char c, va_list arg);
+void	ft_conversion(char c, va_list va);
 int		ft_printf(const char *format, ...);
 #endif
