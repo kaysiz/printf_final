@@ -26,18 +26,18 @@ int check(char *str, char c)
     return (0);
 }
 
-void	ft_undefined()
+static void	ft_undefined()
 {
 	write(1, "undefined", 9);
 }
 
-void    ft_get_conversion(char c, va_list va)
+void    ft_get_conversion(char c, va_list arg)
 {
     char conv;
 	if (check("%sSpdDioOuUxXcC", c))
     {
         conv = c;
-        ft_print(c, va);
+        ft_print(c, arg);
     }
 	else
 		ft_undefined();

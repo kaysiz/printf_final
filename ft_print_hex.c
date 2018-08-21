@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h"
 
 /*
 * Handle the x and X flag to print hex
@@ -22,4 +22,30 @@ void	print_hex(int n, char c)
 	n = n % 16;
 	n += n < 10 ? '0' : (c == 'x' ? 'a' : 'A') - 10;
 	write(1, &n, 1);
+}
+
+
+/*
+* Handle the p to print memory address in hexadecimal
+*/
+void	ft_printaddr(unsigned long int n)
+{
+	char *base;
+
+	base = "0123456789abcdef";
+	if (n >= 16)
+	{
+		ft_printaddr(n / 16);
+		ft_printaddr(n % 16);
+	}
+	else
+		ft_putchar(base[n]);
+}
+
+void	ft_print_hex(va_list arg, char c)
+{
+	if(c == 'x' || c == 'X')
+		print_hex((va_arg(arg, unsigned int)), c);
+	else
+		ft_printaddr(va_arg(arg, unsigned long int));
 }

@@ -10,42 +10,25 @@
 #                                                                              #
 # **************************************************************************** #
 
-FLAG = -Wall -Wextra -Werror
-
 NAME = libftprintf.a
 
-SRC = ft_conversion.c\
-	  ft_print.c\
-	  ft_print_hex.c\
-	  ft_print.c\
-	  ft_printpointer.c\
-	  ft_putchar.c\
-	  ft_putstr.c\
-	  ft_putwchar.c\
-	  ft_putnbr.c\
-	  ft_putwstr.c\
+CFLAGS = -Wall -Wextra -Werror
+SRC =	*.c
+
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@ar rc $(NAME) $(OBJ)
-	@echo "$(NAME) created"
-	@ranlib $(NAME)
-	@echo "$(NAME) indexed"
-
-%.o: %.c
-	@gcc $(FLAG) -c $< -o $@
+$(NAME):
+	gcc $(CFLAGS) -c $(SRC)
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
 
 clean:
-	@rm -f $(OBJ)
-	@echo "OBJ deleted"
+	rm -f $(OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo "$(NAME) deleted"
+	rm -f $(NAME)
 
 re: fclean all
-
-.PHONY: all, clean, fclean, re
 

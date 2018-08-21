@@ -14,37 +14,18 @@
 
 void    ft_print(char c, va_list arg)
 {
-    int		res;
-
-	res = 0;
-	if (c == '%')
-		ft_putchar(c);
-	else if (c == 'c')
-	    ft_putchar(va_arg(arg, void *));
-    else if (c == 'C')
-		ft_putchar_w(va_arg(arg, void *));
+    if (c == 'd' || c == 'i' || c == 'D'|| c == 'u' || c == 'U')
+		ft_print_nbr(arg, c);
+	else if (c == 'o' || c == 'O')
+		ft_putoct(arg, c);
+	else if (c == 'x' || c == 'X' || c == 'p')
+		ft_print_hex(arg, c);
 	else if (c == 's')
-		ft_putstr(va_arg(arg, void *));
-    else if (c == 'S')
-		ft_putstr_w(va_arg(arg, void *));
-	else if (lst->spec == 'd' || lst->spec == 'i' || lst->spec == 'D')
-		res = (ft_get_handler_digit(lst, va_arg(arg, void *)));
-	else if (c == 'u')
-		res = (ft_get_handler_unsigned_digit(lst, va_arg(arg, void *)));
-    else if (c == 'U')
-		res = (ft_get_handler_unsigned_digit(lst, va_arg(arg, void *)));
-	else if (c == 'x')
-		res = (ft_get_handler_x(lst, va_arg(arg, void *)));
-    else if (c == 'X')
-		res = (ft_get_handler_x(lst, va_arg(arg, void *)));
-	else if (c == 'o')
-		res = (ft_get_handler_o(lst, va_arg(arg, void *)));
-    else if (c == 'O')
-		res = (ft_get_handler_o(lst, va_arg(arg, void *)));
-	else if (lst->spec == 'p')
-		res = (ft_get_handler_ptr(lst, va_arg(arg, void *)));
-	else
-		res = (ft_get_handler_char(lst, va_arg(arg, void *)));
-	ft_strdel(&(lst->flags));
-	return (res);
+		ft_putstr(va_arg(arg, char *));
+	else if (c == 'S')
+		ft_putwstr(va_arg(arg, wchar_t *));
+	else if (c == 'c' || c == '%')
+		ft_putchar((char)va_arg(arg, int));
+	else if (c == 'C')
+		ft_putwchar(va_arg(arg, wchar_t));
 }
