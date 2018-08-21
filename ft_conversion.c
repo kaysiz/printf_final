@@ -6,7 +6,7 @@
 /*   By: kaysiz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 14:03:07 by kaysiz            #+#    #+#             */
-/*   Updated: 2018/08/20 14:03:09 by kaysiz           ###   ########.fr       */
+/*   Updated: 2018/08/21 09:48:44 by ksiziva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ int check(char *str, char c)
         i++;
     }
     return (0);
+}
+
+void	ft_undefined()
+{
+	write(1, "undefined", 9);
 }
 
 void    ft_get_conversion(char c, va_list va)
