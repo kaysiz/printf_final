@@ -5,6 +5,7 @@
 
 int main(void)
 {
-	ft_printf("%C\n", 'm');
+	setlocale(LC_CTYPE, "");
+	ft_printf("%S\n", L"ДОБРО ПОЖАЛОВАТЬ В КИНО");
 	return (0);
 }

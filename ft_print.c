@@ -23,9 +23,9 @@ void    ft_print(char c, va_list arg)
 	else if (c == 's')
 		ft_putstr(va_arg(arg, char *));
 	else if (c == 'S')
-		ft_putstr(va_arg(arg, char *));
+		ft_putwstr(va_arg(arg, wchar_t *));
 	else if (c == 'c' || c == '%')
 		ft_putchar((char)va_arg(arg, int));
 	else if (c == 'C')
-		ft_putchar((char)va_arg(arg, int));
+		ft_putwchar(va_arg(arg, wchar_t));
 }
