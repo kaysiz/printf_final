@@ -25,12 +25,6 @@ int check(char *str, char c)
     }
     return (0);
 }
-
-static void	ft_undefined()
-{
-	write(1, "undefined", 9);
-}
-
 void    ft_conversion(char c, va_list arg)
 {
 	if (check("sSpdDioOuUxXcC", c))
@@ -38,5 +32,5 @@ void    ft_conversion(char c, va_list arg)
 	else if(c == '%')
         ft_putchar(c);
     else
-		ft_undefined();
+		ft_putchar(' ');
 }
