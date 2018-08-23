@@ -6,18 +6,18 @@
 /*   By: ksiziva <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 15:15:50 by ksiziva           #+#    #+#             */
-/*   Updated: 2018/08/22 15:15:53 by ksiziva          ###   ########.fr       */
+/*   Updated: 2018/08/23 10:51:58 by ksiziva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_putoct(va_list arg, char c)
+void	ft_putoct(va_list arg, char c)
 {
-    if(c == 'o')
-        ft_printoct(va_arg(arg, unsigned int));
-    else
-        ft_printloct(va_arg(arg, unsigned long int));
+	if (c == 'o')
+		ft_printoct(va_arg(arg, unsigned int));
+	else
+		ft_printloct(va_arg(arg, unsigned long int));
 }
 
 void	ft_printoct(int n)

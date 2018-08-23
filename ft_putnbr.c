@@ -6,7 +6,7 @@
 /*   By: ksiziva <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 15:18:16 by ksiziva           #+#    #+#             */
-/*   Updated: 2018/08/22 15:18:17 by ksiziva          ###   ########.fr       */
+/*   Updated: 2018/08/23 11:17:07 by ksiziva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,14 @@ void	ft_putulnbr(unsigned long int n)
 		ft_putchar(n + 48);
 }
 
-void    ft_print_nbr(va_list arg, char c)
+void	ft_print_nbr(va_list arg, char c)
 {
-    if(c ==  'i' || c == 'd')
-        ft_putnbr(va_arg(arg, int));
-    else if(c == 'U')
+	if (c == 'i' || c == 'd')
+		ft_putnbr(va_arg(arg, int));
+	else if (c == 'U')
 		ft_putulnbr(va_arg(arg, unsigned long int));
-	else if(c == 'u')
+	else if (c == 'u')
 		ft_putulnbr(va_arg(arg, unsigned int));
 	else
-        ft_putlnbr(va_arg(arg, long int));
+		ft_putlnbr(va_arg(arg, long int));
 }

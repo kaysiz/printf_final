@@ -6,7 +6,7 @@
 /*   By: ksiziva <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 09:47:07 by ksiziva           #+#    #+#             */
-/*   Updated: 2018/08/21 09:47:31 by ksiziva          ###   ########.fr       */
+/*   Updated: 2018/08/23 11:26:02 by ksiziva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ void	ft_putwchar(wchar_t chr)
 void	ft_putwstr(wchar_t *chr)
 {
 	while (*chr)
-        ft_putwchar(*chr++);
+		ft_putwchar(*chr++);
 }
